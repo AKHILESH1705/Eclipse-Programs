@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class Arra_pair_timeComplex {
+
+ public static void pairSum(int[] arr) {
+	 
+	 System.out.println("hello ");
+	Arrays.sort(arr);
+	int num = 6;
+    int i = 0,j=arr.length-1;
+    int count = 0; 
+    while(i<j)
+    {
+        if(arr[i]+arr[j]>num)
+        {
+            j--;
+        }
+        else if(arr[i]+arr[j]<num)
+        {
+         i++;    
+        }
+        else if((arr[i]==arr[j])&&(arr[i]+arr[j]==num))
+        {
+            count++;
+        }
+        else
+        {
+            count++;
+            i++;
+            j--;
+        }
+        
+    }
+    
+    System.out.println(count);
+}
+ 
+ public static int[] takeInput() {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr1[] = new int[n];
+		for(int i = 0;i<n;i++) 
+		{
+        arr1[i] = s.nextInt();
+		}
+	return arr1; 			
+}
+ public static void main(String args[]) {
+		
+		Scanner s = new Scanner(System.in);
+		int t = s.nextInt();
+       while(t > 0)
+      {
+        int[] arr1 = takeInput(); 
+        pairSum(arr1);
+        t -= 1;
+    }	
+ }
+}

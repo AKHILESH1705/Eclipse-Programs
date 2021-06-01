@@ -1,0 +1,19 @@
+package Test_constructor;
+
+class Test {
+	    static int a; 
+	    static int b; 
+	    static void fun1() 
+	    { 
+	       // a = 20;                             //Line 1
+	        b = 10;                             //Line 2
+	        fun2();                             //Line 3
+	        System.out.print(b);           //Line 4
+	    } 
+	    static void fun2() 
+	    {     
+	        System.out.println("from m2"); 
+	    }
+}
+	
+

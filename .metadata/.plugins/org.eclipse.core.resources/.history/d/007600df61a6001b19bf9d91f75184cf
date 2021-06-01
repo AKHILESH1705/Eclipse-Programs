@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Number_in_array {
+
+	public static boolean checkNumber(int input[], int x) {
+	    int size = input.length;
+		if(size==1){
+		       if(input[0]==x)
+		           return true;
+		       else
+		           return false;
+		   }
+		    if(input[0]==x){
+		        return true;
+		    }
+		    else{
+		    	size--;
+		        boolean isx=checkNumber(input,x);
+		        return isx;
+		    }
+	}	
+		public static void main(String argsp[]) {
+			Scanner s = new Scanner(System.in);
+			int arr[] = {9,8,10};
+ 			int n = s.nextInt();
+			System.out.println(checkNumber(arr,n));
+		}
+}
+
+

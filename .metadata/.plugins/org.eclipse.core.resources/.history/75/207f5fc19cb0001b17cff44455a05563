@@ -1,0 +1,17 @@
+package Fraction_of_Number;
+
+import com.sun.tools.classfile.Opcode.Set;
+
+public class Fraction_use {
+	
+	public static void main(String args[]) {
+		Fraction f1 = new Fraction(20,30);
+		f1.print();
+		
+		f1.set_numerator(12);
+		f1.print();
+		
+		
+	}
+
+}

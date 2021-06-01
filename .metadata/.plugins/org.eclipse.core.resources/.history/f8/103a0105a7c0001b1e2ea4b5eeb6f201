@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class EvenafterOddvoidType {
+
+	public static void  EvenOddLinked(Node<Integer>head){
+		if(head==null || head.next==null) {
+			return;
+		}
+		Node<Integer> oddhead = null, oddtail = null,temp = head;; 
+		Node<Integer> evenhead = null, eventail = null;
+	  	while(temp!=null) {   
+		   if(temp.data%2==0 && temp.data!=0) {
+	  		   if(evenhead==null) {
+	  			 evenhead = temp;
+	             eventail = temp; 
+	  		   }
+	  		   else {
+	  			   eventail.next = temp;
+	  			 eventail = eventail.next;
+	  		   }
+	  		   
+	  	   }
+		   else {
+		   if(oddhead==null) {
+				oddhead = temp;
+				oddtail = temp;
+			   }
+			   else {
+				   oddtail.next = temp;
+				   oddtail = oddtail.next;
+			   }  
+	  	 }
+		   temp = temp.next;
+	  	}
+	  	if(oddhead==null) {
+	  		head = evenhead;
+	  	}
+	  	else if(evenhead==null) {
+	  		head =  oddhead;
+	  	}
+	  	else {
+	  	oddtail.next=null;
+	  	eventail.next = null;
+	  	oddtail.next = evenhead;
+	  	head = oddhead;
+	  	}
+	}  	
+	  	
+	public static void PrintLinked(Node<Integer> head) {
+		while (head != null) {
+			System.out.print(head.data + " ");
+			head = head.next;
+		}
+
+	}
+
+	public static Node<Integer> takeInput() {
+		Scanner s = new Scanner(System.in);
+		int data = s.nextInt();
+		Node<Integer> head = null, tail = null;
+		while (data != -1) {
+			Node<Integer> newNode = new Node<Integer>(data);
+			if (head == null) {
+				head = newNode;
+				tail = newNode;
+			} else {
+				tail.next = newNode;
+				tail = tail.next; // tail = currentNode
+			}
+			data = s.nextInt();
+		}
+		return head;
+	}
+
+	public static void main(String args[]) {
+		Node<Integer> head = takeInput();
+		EvenOddLinked(head);
+		PrintLinked(head);
+
+	}
+}

@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class MergeTwoListSorted {
+	
+	
+	
+	
+	public static Node<Integer> MergetwoLinked(Node<Integer> head, Node<Integer> head1){
+		
+		Node<Integer> newhead = null;
+		
+		while(head.next!=null && head1.next!=null) {
+			if(head.data<head1.data) {
+				newhead = head;
+			}
+			else {
+				newhead.next = head1;
+	       	}
+			newhead = newhead.next;
+			head = head.next;
+			head1 = head.next;
+			
+		}
+		return  newhead;
+	}
+	public static void PrintLinked(Node<Integer> head) {
+		while(head!=null)
+		{
+			System.out.print(head.data+ " ");
+			head = head.next;
+		}
+		
+	}
+	public static Node<Integer> takeInput(){
+		Scanner s = new Scanner(System.in);
+		int data = s.nextInt();
+		Node<Integer> head = null,tail = null;
+		while(data!=-1) {
+			Node<Integer> newNode = new Node<Integer>(data);
+			if(head==null) {
+				head = newNode;
+				tail = newNode;
+			}
+			else {
+				tail.next = newNode;
+				tail = tail.next; // tail = currentNode
+			}
+			data = s.nextInt();
+			}
+		return head;
+	}
+	
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		Node<Integer> head = takeInput();
+		Node<Integer> head1 = takeInput();
+		head = MergetwoLinked(head,head1);
+	    PrintLinked(head);
+		
+	}
+
+}

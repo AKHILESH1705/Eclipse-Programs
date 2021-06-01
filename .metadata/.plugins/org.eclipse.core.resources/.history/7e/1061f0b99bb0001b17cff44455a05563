@@ -1,0 +1,17 @@
+package Fraction_of_Number;
+
+public class Fraction {
+private int numerator;
+private int denominator;
+
+public Fraction(int numerator , int denominator) {
+	this.numerator = numerator;
+	if(denominator==0) {
+		return;
+	}
+	this.denominator = denominator;
+	//simplify();
+}
+	
+	
+}

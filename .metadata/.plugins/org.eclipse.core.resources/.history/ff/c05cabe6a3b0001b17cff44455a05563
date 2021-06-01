@@ -1,0 +1,17 @@
+package Fraction_of_Number;
+
+public class Fraction_use {
+	
+	public static void main(String args[]) {
+		Fraction f1 = new Fraction(20,30);
+		f1.print();
+		
+		f1.set_numerator(12);
+		int d = f1.get_denominator();
+		System.out.println(d);
+		f1.print();
+		
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.util.*;
+public class Triplet_sum_with_time {
+	
+	public static int tripletSum(int[] arr, int num) {
+		//Your code goes here
+        int n =  arr.length;
+        int count = 0;
+        Arrays.sort(arr);
+        int i = 0,j=1,k=2;
+            while(i<n-2 && j < n-1 && k<n)
+            {
+                if(arr[i]+arr[j]+arr[k]==num){
+                    count++;
+                    i++;
+                    j++;
+                    k++;
+           }
+        }
+        return count;
+	}
+	public static void main(String args[])
+	{
+	int[] arr = new int[]{6, 1, 6 ,5, 3, 2, 5, 0, 5, 6, 0  };
+	int sum = 5;
+	int res = tripletSum(arr, sum);
+	System.out.println(res);
+	}
+}
+

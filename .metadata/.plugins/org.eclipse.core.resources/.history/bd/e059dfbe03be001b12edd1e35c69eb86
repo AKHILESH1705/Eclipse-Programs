@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class EleminateDuplicateFromLinkedList {
+	
+	
+	public static Node<Integer> takeInput(){
+		Scanner s = new Scanner(System.in);
+		int data = s.nextInt();
+		Node<Integer> head = null;
+		while(data!=-1) {
+			Node<Integer> newNode = new Node<Integer>(data);
+		}
+		return head;
+	}
+	
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		Node<Integer> head = takeInput();
+		
+	}
+
+}
